@@ -1,12 +1,12 @@
 :root {
-  --ivory: #f6f1e7;
-  --soft: #eee8dc;
+  --ivory: #143f36;
+  --soft: #1b4b40;
   --forest: #0f3a31;
   --forest-deep: #082b25;
   --ink: #17312c;
   --gold: #c99a4b;
   --gold-soft: #e4c58d;
-  --line: rgba(23, 49, 44, 0.16);
+  --line: rgba(255, 253, 248, 0.18);
   --white: #fffdf8;
   --sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: "Libre Caslon Display", Georgia, serif;
@@ -16,7 +16,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  color: var(--ink);
+  color: var(--white);
   background: var(--ivory);
   font-family: var(--sans);
   line-height: 1.55;
@@ -25,28 +25,33 @@ body {
 
 a { color: inherit; }
 .container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.site-header.container { max-width: none; }
 
 .site-header {
   display: flex;
   align-items: center;
   min-height: 98px;
+  color: var(--white);
 }
 .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
 .brand-mark {
   width: 44px; height: 44px; display: grid; place-items: center;
   font-family: var(--serif); font-size: 35px; line-height: 1;
-  border-right: 1px solid rgba(23,49,44,.5);
+  border-right: 1px solid rgba(255,255,255,.35);
   padding-right: 11px;
 }
 .brand-name { font-size: 14px; letter-spacing: .28em; font-weight: 600; }
 
-.hero { padding: 52px 0 84px; }
+.hero { padding: 52px 0 84px; color: var(--white); }
+.site-header, .hero { background: #143f36; }
+.site-header { width: 100%; padding-left: max(24px, calc((100% - 1120px)/2)); padding-right: max(24px, calc((100% - 1120px)/2)); }
+.section-light, .section-soft, .dark-zone { border-top: 1px solid rgba(255,255,255,.08); }
 .eyebrow { font-size: 11px; letter-spacing: .3em; margin: 0 0 26px; opacity: .66; }
 .hero h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 .hero h1 { font-size: clamp(54px, 7vw, 88px); line-height: .98; margin: 0; max-width: 900px; }
 .hero h1 span, .owner-grid h2 span { color: var(--gold); }
 .tagline { margin: 24px 0 0; letter-spacing: .34em; font-size: clamp(11px, 1.5vw, 15px); font-weight: 500; }
-.hero-copy { max-width: 650px; font-size: 18px; margin: 30px 0 34px; color: rgba(23,49,44,.88); }
+.hero-copy { max-width: 650px; font-size: 18px; margin: 30px 0 34px; color: rgba(255,253,248,.88); }
 
 .button {
   display: inline-flex; align-items: center; gap: 18px;
@@ -59,8 +64,8 @@ a { color: inherit; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(124,84,22,.2); }
 
 .section { padding: 72px 0; }
-.section-light { background: var(--white); }
-.section-soft { background: #f3eee5; }
+.section-light { background: #194b40; color: var(--white); }
+.section-soft { background: #21594b; color: var(--white); }
 .section-accent { width: 44px; height: 3px; background: var(--gold); margin-bottom: 20px; }
 .section h2, .dark-zone h2 { margin: 0 0 36px; font-size: clamp(38px, 5vw, 58px); line-height: 1.05; }
 .grid.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
@@ -69,12 +74,12 @@ a { color: inherit; }
 .feature:last-child { padding-right: 0; }
 .icon-wrap {
   width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
-  background: #f0dfc3; margin-bottom: 18px; font-size: 24px;
+  background: rgba(228,197,141,.18); border: 1px solid rgba(228,197,141,.35); color: var(--gold-soft); margin-bottom: 18px; font-size: 24px;
 }
 .feature h3 { font-size: 27px; line-height: 1.1; margin: 0 0 12px; }
-.feature p { margin: 0; color: rgba(23,49,44,.8); }
+.feature p { margin: 0; color: rgba(255,253,248,.80); }
 .section-heading-row { display: flex; justify-content: space-between; gap: 24px; align-items: end; }
-.microcopy { font-size: 11px; letter-spacing: .28em; line-height: 1.65; margin: 0 6px 38px 0; }
+.microcopy { font-size: 11px; letter-spacing: .28em; line-height: 1.65; margin: 0 6px 38px 0; color: rgba(255,253,248,.68); }
 
 .dark-zone { background: linear-gradient(135deg, var(--forest), var(--forest-deep)); color: var(--white); }
 .owner-grid { display: grid; grid-template-columns: 1.7fr .6fr; gap: 72px; padding-top: 74px; padding-bottom: 52px; }
